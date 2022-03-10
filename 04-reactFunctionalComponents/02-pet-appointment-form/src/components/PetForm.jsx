@@ -13,6 +13,14 @@ const PetForm = ()=>{
     //pet image
     let [petImg, setPetImg] = useState("")
 
+    const showPetImageError = ()=>{
+        if(petImg.length==0){
+            return <p className='text-danger'>Image is required!</p>
+        }else{
+            return null
+        }
+
+    }
     
 
     return (
@@ -21,11 +29,19 @@ const PetForm = ()=>{
                 <div className="form-group">
                     <label htmlFor="">Name:</label>
                     <input type="text" name="" id="" className="form-control" onChange={(e)=>setName(e.target.value)}    /> 
+                   {
+                       //if the name.length is less than 4 and if it is greater than 0
+                    name.length<4 && name.length>0? <p className='text-danger'>Name must be at least 4 characters</p> : null
+                   }
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Age:</label>
                     <input type="number" name="" id="" className="form-control" onChange={(e)=>setAge(e.target.value)}  /> 
                 </div>
+                 {
+                     age<0? <p className='text-danger'>Please Enter a valid age!</p>: null
+                 }
+
                 <div className="form-group">
                     <label htmlFor="">Drop off Date:</label>
                     <input type="date" name="" id="" className="form-control" onChange={(e)=>setDate(e.target.value)} /> 
@@ -33,6 +49,7 @@ const PetForm = ()=>{
                 <div className="form-group">
                     <label htmlFor="">Pet Image:</label>
                     <input type="text" name="" id="" className="form-control" onChange={(e)=>setPetImg(e.target.value)} /> 
+                    {showPetImageError()}
                 </div>
                 <input type="submit" value="Make Appointment!" className="btn btn-success mt-3" />
             </form>
