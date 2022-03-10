@@ -7,8 +7,10 @@ function App() {
   return (
     <div className="App container">
       <h1 className="text-success">Welcome to the Dojo Pet Appointment Maker</h1>
-      {/* <PetForm></PetForm> */}
-      <PetFormOneObjectStateWay></PetFormOneObjectStateWay>
+      <PetForm></PetForm>
+
+    
+      {/* <PetFormOneObjectStateWay></PetFormOneObjectStateWay> */}
     </div>
   );
 }
