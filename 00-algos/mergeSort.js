@@ -67,4 +67,6 @@ const mergeSort = (arr)=>{
 }
 
 
-console.log(mergeSort([5,4,0,9,2,3,1]))
+console.log(mergeSort([5,4,0,9]))
+
+//call stack- one or multiple open function calls that are waiting to finish execution
