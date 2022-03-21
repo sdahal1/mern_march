@@ -17,6 +17,7 @@ module.exports.findAllNinjas = (req,res)=>{
 }
 
 module.exports.createNinja = (req,res)=>{
+    console.log("req.body-->", req.body)
     Ninja.create(req.body)
         .then(newlyCreatedNinja =>{
             res.json({results: newlyCreatedNinja})
