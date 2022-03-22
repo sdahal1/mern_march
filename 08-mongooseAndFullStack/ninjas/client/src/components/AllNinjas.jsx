@@ -35,6 +35,8 @@ const AllNinjas = (props) => {
                                     Age: {ninjaObj.age}
                                 </p>
                                 <img src={ninjaObj.profilePicUrl} alt="" height="200px" width="200px" />
+                                <br />
+                                <Link to={`/edit/${ninjaObj._id}`} className='btn btn-secondary mt-3'>Edit {ninjaObj.firstName}</Link>
                             </div>
                         </div>
                     )
