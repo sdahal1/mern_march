@@ -4,7 +4,7 @@ import {
     Link
 } from "react-router-dom";
 
-const AllNinjas = () => {
+const AllNinjas = (props) => {
 
     //state variable to store all ninjas in
     const [ninjaList, setNinjaList] = useState([]);
@@ -19,7 +19,7 @@ const AllNinjas = () => {
             .catch(err=>{
                 console.log("errr", err)
             })
-    },[])
+    },[props.formSubmitted])
 
 
     return (

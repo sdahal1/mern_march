@@ -27,7 +27,7 @@ const OneNinjaDetail = () => {
             <p>Age: {info.age}</p>
             <p>Veteran Status: <b>{info.isVeteran? "Veteran": "Not a Veteran"}</b></p>
         </div>
-    );
+    ); 
 };
 
 export default OneNinjaDetail;
