@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const NinjaForm = (props) => {
 
     let [firstName,setFirstName] = useState("");
-    let [age,setAge] = useState(undefined);
+    let [age,setAge] = useState("");
     let [isVeteran,setIsVeteran] = useState(false);
     let [profilePicUrl,setProfilePicUrl] = useState("");
 
 
     let [formErrors, setFormErrors] = useState({})
 
+
+    const history = useHistory();
 
     const createNinja = (e)=>{
         e.preventDefault();
@@ -28,9 +31,12 @@ const NinjaForm = (props) => {
     
                     //clear the form info-> first clear out the state variables
                     setFirstName("");
-                    setAge(undefined);
+                    setAge("");
                     setIsVeteran(false);
                     setProfilePicUrl("");
+                    setFormErrors({});
+
+                    history.push("/")
 
                 }
 

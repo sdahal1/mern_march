@@ -21,6 +21,26 @@ const AllNinjas = (props) => {
             })
     },[props.formSubmitted])
 
+    const deleteNinja = (idOfNinja)=>{
+        axios.delete(`http://localhost:8000/api/ninjas/${idOfNinja}`)
+            .then(res=>{
+                console.log("res when deleting->", res)
+                // setNinjaList(ninjaList.filter(ninjaObj => ninjaObj._id != idOfNinja)); //this is the one liner way to remove from the dom
+                let filteredList = ninjaList.filter((ninjaObj)=>{
+                    return ninjaObj._id != idOfNinja //return back only the ninjas whose id is not the id of the ninja we want to delete
+                })
+                setNinjaList(filteredList)
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+
+
+
+        
+
+    }
+
 
     return (
         <div>
@@ -36,7 +56,8 @@ const AllNinjas = (props) => {
                                 </p>
                                 <img src={ninjaObj.profilePicUrl} alt="" height="200px" width="200px" />
                                 <br />
-                                <Link to={`/edit/${ninjaObj._id}`} className='btn btn-secondary mt-3'>Edit {ninjaObj.firstName}</Link>
+                                <Link to={`/edit/${ninjaObj._id}`} className='btn btn-secondary m-3'>Edit {ninjaObj.firstName}</Link>
+                                <button onClick = {()=>{deleteNinja(ninjaObj._id)}} className="btn btn-danger m-3">Delete</button>
                             </div>
                         </div>
                     )

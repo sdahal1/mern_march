@@ -8,7 +8,12 @@ const EditNinjaForm = (props) => {
 
    
 
-    let [ninjaInfo, setNinjaInfo] = useState({})
+    let [ninjaInfo, setNinjaInfo] = useState({
+        firstName: "",
+        age: "",
+        isVeteran: false,
+        profilePicUrl:""
+    })
 
 
     let {_id} = useParams();

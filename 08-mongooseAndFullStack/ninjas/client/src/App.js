@@ -21,12 +21,15 @@ function App() {
     <BrowserRouter>
       <div className="App container">
         <h1>Wall of Ninjas Full Stack</h1>
-        <Link to="/" className="btn btn-info">Home</Link>
+        <Link to="/" className="btn btn-info m-1">Home</Link>
+        <Link to="/new" className="btn btn-secondary m-1">Add Ninja</Link>
+
         <Switch>
           <Route exact path="/">
-            <NinjaForm formSubmitted = {formSubmitted} setFormSubmitted = {setFormSubmitted}></NinjaForm>
-            <hr />
             <AllNinjas formSubmitted = {formSubmitted}></AllNinjas>
+          </Route>
+          <Route exact path = "/new">
+            <NinjaForm formSubmitted = {formSubmitted} setFormSubmitted = {setFormSubmitted}></NinjaForm>
           </Route>
           <Route exact path= "/details/:_id">
             <OneNinjaDetail></OneNinjaDetail>

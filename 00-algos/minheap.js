@@ -6,6 +6,11 @@ class MinHeap{
     insert(value){
 
     }
+
+    remove(){
+        
+    }
+
 }
 
 
